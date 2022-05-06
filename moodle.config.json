@@ -82,8 +82,8 @@
         "high": 120
     },
     "customurlscheme": "moodlemobile",
-    "siteurl": "",
-    "sitename": "",
+    "siteurl": "https://learning.ducislanguage.com/",
+    "sitename": "Ducis Langauage",
     "multisitesdisplay": "",
     "sitefindersettings": {},
     "onlyallowlistedsites": false,
