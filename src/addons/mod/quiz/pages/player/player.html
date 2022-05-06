@@ -38,7 +38,7 @@
         </ion-button>
 
         <!-- Questions -->
-        <form name="addon-mod_quiz-player-form" *ngIf="questions.length && !quizAborted && !showSummary" #quizForm>
+        <form name="addon-mod_quiz-player-form" *ngIf="questions.length && !quizAborted " #quizForm>
             <div *ngFor="let question of questions">
                 <ion-card id="addon-mod_quiz-question-{{question.slot}}">
                     <!-- "Header" of the question. -->
