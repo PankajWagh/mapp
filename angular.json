@@ -18,8 +18,10 @@
               "path": "./webpack.config.js"
             },
             "allowedCommonJsDependencies": [
-              "chart.js"
+              "chart.js",
+              "hammerjs"
             ],
+            "showCircularDependencies": false,
             "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
