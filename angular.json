@@ -8,6 +8,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
+      
       "prefix": "app",
       "schematics": {},
       "architect": {
@@ -18,8 +19,10 @@
               "path": "./webpack.config.js"
             },
             "allowedCommonJsDependencies": [
-              "chart.js"
+              "chart.js",
+              "hammerjs"
             ],
+			"showCircularDependencies": false,
             "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -146,7 +149,7 @@
   },
   "cli": {
     "defaultCollection": "@ionic/angular-toolkit",
-    "analytics": false
+    "analytics": "185e4c0b-0bf3-4cd1-a2f4-dfd822f85924"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

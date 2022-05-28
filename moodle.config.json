@@ -1,8 +1,8 @@
 {
-    "app_id": "com.moodle.moodlemobile",
+    "app_id": "com.ducislanguage.mobile",
     "appname": "Moodle Mobile",
-    "versioncode": 40000,
-    "versionname": "4.0.0",
+    "versioncode": 40100,
+    "versionname": "4.0.1",
     "cache_update_frequency_usually": 420000,
     "cache_update_frequency_often": 1200000,
     "cache_update_frequency_sometimes": 3600000,
@@ -97,7 +97,7 @@
     "forceLoginLogo": false,
     "ioswebviewscheme": "moodleappfs",
     "appstores": {
-        "android": "com.moodle.moodlemobile",
+        "android": "com.ducislanguage.mobile",
         "ios": "id633359593"
     },
     "wsrequestqueuelimit": 10,

@@ -9,8 +9,8 @@
 #
 
 # Run gulp watch.
-echo "> gulp watch --disable-host-check &"
-gulp watch  &
+echo "> gulp watch &"
+gulp watch &
 
 # Remove unknown arguments and prepare angular target.
 args=("$@")
@@ -29,4 +29,4 @@ done
 
 # Serve app.
 echo "> NODE_OPTIONS=--max-old-space-size=4096 ng run app:$angulartarget ${args[@]}"
-NODE_OPTIONS=--max-old-space-size=4096 ng run "app:$angulartarget" ${args[@]} 
+NODE_OPTIONS=--max-old-space-size=4096 ng run "app:$angulartarget" ${args[@]}
