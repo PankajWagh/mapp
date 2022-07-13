@@ -94,7 +94,7 @@
                             <h3>{{ 'core.login.createuserandpass' | translate }}</h3>
                         </ion-label>
                     </ion-item-divider>
-                    <ion-item class="ion-text-wrap">
+					<!-- <ion-item class="ion-text-wrap">
                         <ion-label position="stacked">
                             <span core-mark-required="true">{{ 'core.login.username' | translate }}</span>
                         </ion-label>
@@ -102,6 +102,28 @@
                             formControlName="username" autocapitalize="none" autocorrect="off">
                         </ion-input>
                         <core-input-errors [control]="signupForm.controls.username" [errorMessages]="usernameErrors"></core-input-errors>
+                    </ion-item>-->
+					
+					<ion-item class="ion-text-wrap">
+                        <ion-label position="stacked">
+						<span>Enter your email address. This will be your username.</span>
+                            <span core-mark-required="true">{{ 'core.user.email' | translate }}</span>
+							
+                        </ion-label>
+                        <ion-input type="email" name="email" placeholder="{{ 'core.user.email' | translate }}" formControlName="email"
+                            autocapitalize="none" autocorrect="off">
+                        </ion-input>
+                        <core-input-errors [control]="signupForm.controls.email" [errorMessages]="emailErrors"></core-input-errors>
+						
+                    </ion-item>
+                    <ion-item class="ion-text-wrap">
+                        <ion-label position="stacked">
+                            <span core-mark-required="true">{{ 'core.user.emailagain' | translate }}</span>
+                        </ion-label>
+                        <ion-input type="email" name="email2" placeholder="{{ 'core.user.emailagain' | translate }}" autocapitalize="none"
+                            formControlName="email2" autocorrect="off" [pattern]="escapeMail(signupForm.controls.email.value)">
+                        </ion-input>
+                        <core-input-errors [control]="signupForm.controls.email2" [errorMessages]="email2Errors"></core-input-errors>
                     </ion-item>
                     <ion-item class="ion-text-wrap">
                         <ion-label position="stacked">
@@ -119,29 +141,12 @@
                     </ion-item>
 
                     <!-- More details. -->
-                    <ion-item-divider class="ion-text-wrap">
+                   <!-- <ion-item-divider class="ion-text-wrap">
                         <ion-label>
                             <h3>{{ 'core.login.supplyinfo' | translate }}</h3>
                         </ion-label>
-                    </ion-item-divider>
-                    <ion-item class="ion-text-wrap">
-                        <ion-label position="stacked">
-                            <span core-mark-required="true">{{ 'core.user.email' | translate }}</span>
-                        </ion-label>
-                        <ion-input type="email" name="email" placeholder="{{ 'core.user.email' | translate }}" formControlName="email"
-                            autocapitalize="none" autocorrect="off">
-                        </ion-input>
-                        <core-input-errors [control]="signupForm.controls.email" [errorMessages]="emailErrors"></core-input-errors>
-                    </ion-item>
-                    <ion-item class="ion-text-wrap">
-                        <ion-label position="stacked">
-                            <span core-mark-required="true">{{ 'core.user.emailagain' | translate }}</span>
-                        </ion-label>
-                        <ion-input type="email" name="email2" placeholder="{{ 'core.user.emailagain' | translate }}" autocapitalize="none"
-                            formControlName="email2" autocorrect="off" [pattern]="escapeMail(signupForm.controls.email.value)">
-                        </ion-input>
-                        <core-input-errors [control]="signupForm.controls.email2" [errorMessages]="email2Errors"></core-input-errors>
-                    </ion-item>
+                    </ion-item-divider> -->
+                
                     <ion-item *ngFor="let nameField of settings.namefields" class="ion-text-wrap">
                         <ion-label position="stacked">
                             <span core-mark-required="true">{{ 'core.user.' + nameField | translate }}</span>
