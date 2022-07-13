@@ -72,10 +72,14 @@
                         </ion-label>
                     </ion-item>
                 </form>
-
+				<div class="core-login-site-logo">
+						<!-- Show site logo or a default image. -->
+						<img *ngIf="logoUrl" [src]="logoUrl" role="presentation" alt="" onError="this.src='assets/img/login_logo.png'">
+						<img *ngIf="!logoUrl" src="assets/img/login_logo.png" role="presentation" alt="">
+				</div>	
                 <!-- Signup form. -->
                 <form *ngIf="!ageDigitalConsentVerification" [formGroup]="signupForm" (ngSubmit)="create($event)" #signupFormEl>
-
+			
                     <ion-item class="ion-text-wrap ion-text-center">
                         <ion-label>
                             <!-- If no sitename show big siteurl. -->
@@ -87,7 +91,6 @@
                             <p *ngIf="siteName">{{siteUrl}}</p>
                         </ion-label>
                     </ion-item>
-
                     <!-- Username and password. -->
                     <ion-item-divider class="ion-text-wrap">
                         <ion-label>
