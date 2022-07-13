@@ -288,7 +288,7 @@ export class CoreLoginEmailSignupPage implements OnInit {
         const modal = await CoreDomUtils.showModalLoading('core.sending', true);
 
         const params: SignupUserWSParams = {
-            username: this.signupForm.value.username.trim().toLowerCase(),
+            username: this.signupForm.value.email.trim().toLowerCase(),
             password: this.signupForm.value.password,
             firstname: CoreTextUtils.cleanTags(this.signupForm.value.firstname),
             lastname: CoreTextUtils.cleanTags(this.signupForm.value.lastname),
