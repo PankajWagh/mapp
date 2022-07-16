@@ -96,14 +96,14 @@ export class CoreLoginEmailSignupPage implements OnInit {
 
         // Create the signupForm with the basic controls. More controls will be added later.
         this.signupForm = this.fb.group({
-            username: ['', Validators.required],
+           /* username: ['', Validators.required], */
             password: ['', Validators.required],
             email: ['', Validators.compose([Validators.required, Validators.email])],
             email2: ['', Validators.compose([Validators.required, Validators.email])],
         });
 
         // Setup validation errors.
-        this.usernameErrors = CoreLoginHelper.getErrorMessages('core.login.usernamerequired');
+        this.usernameErrors = CoreLoginHelper.getErrorMessages('core.login.missingemail');
         this.passwordErrors = CoreLoginHelper.getErrorMessages('core.login.passwordrequired');
         this.emailErrors = CoreLoginHelper.getErrorMessages('core.login.missingemail');
         this.policyErrors = CoreLoginHelper.getErrorMessages('core.login.policyagree');
