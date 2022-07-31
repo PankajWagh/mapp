@@ -360,7 +360,16 @@ export class CoreQuestionDelegateService extends CoreDelegate<CoreQuestionHandle
      * @return Whether it's supported.
      */
     isQuestionSupported(type: string): boolean {
-        return this.hasHandler(this.getFullTypeName(type), true);
+
+		if(type != 'combined')
+		{
+				return this.hasHandler(this.getFullTypeName(type), true);
+		}
+		else
+		{
+			return true;
+		}
+        
     }
 
     /**

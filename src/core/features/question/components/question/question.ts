@@ -60,7 +60,8 @@ export class CoreQuestionComponent implements OnInit, AsyncComponent {
     protected logger: CoreLogger;
 
     get loaded(): boolean {
-        return this.promisedReady.isResolved();
+       return this.promisedReady.isResolved();
+	   
     }
 
     constructor(protected changeDetector: ChangeDetectorRef, private element: ElementRef) {
@@ -78,24 +79,27 @@ export class CoreQuestionComponent implements OnInit, AsyncComponent {
      */
     async ngOnInit(): Promise<void> {
         this.offlineEnabled = CoreUtils.isTrueOrOne(this.offlineEnabled);
-
-        if (!this.question || (this.question.type != 'random' &&
+		
+        if (!this.question || (this.question.type != 'random' && this.question.type != 'combined' &&
                 !CoreQuestionDelegate.isQuestionSupported(this.question.type))) {
             this.promisedReady.resolve();
 
             return;
         }
+		
+		
 
         // Get the component to render the question.
         this.componentClass = await CoreUtils.ignoreErrors(
             CoreQuestionDelegate.getComponentForQuestion(this.question),
         );
-
+		console.log("*****96"+this.componentClass);
         if (!this.componentClass) {
             this.promisedReady.resolve();
 
             return;
         }
+		console.log("*****101");
         // Set up the data needed by the question and behaviour components.
         this.data = {
             question: this.question,
@@ -130,7 +134,7 @@ export class CoreQuestionComponent implements OnInit, AsyncComponent {
 
             return;
         }
-
+		console.log(this.question.html);
         // Get the sequence check (hidden input). This is required.
         this.seqCheck = CoreQuestionHelper.getQuestionSequenceCheckFromHtml(this.question.html);
         if (!this.seqCheck) {

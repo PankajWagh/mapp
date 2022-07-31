@@ -228,7 +228,7 @@ export class AddonModQuizIndexComponent extends CoreCourseModuleMainActivityComp
         const types = await AddonModQuiz.getQuizRequiredQtypes(quiz.id, { cmId: this.module.id });
 
         this.unsupportedQuestions = AddonModQuiz.getUnsupportedQuestions(types);
-        this.hasSupportedQuestions = !!types.find((type) => type != 'random' && this.unsupportedQuestions.indexOf(type) == -1);
+        this.hasSupportedQuestions = !!types.find((type) => type != 'random' && type != 'combined' && this.unsupportedQuestions.indexOf(type) == -1);
 
         await this.getAttempts(quiz);
 
