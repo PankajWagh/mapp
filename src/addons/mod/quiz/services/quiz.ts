@@ -692,7 +692,7 @@ export class AddonModQuizProvider {
         const messages: string[] = [];
 
         questions.forEach((question) => {
-            if (question.type != 'random' && question.type != 'combined' && !CoreQuestionDelegate.isQuestionSupported(question.type)) {
+            if (question.type != 'random' && question.type != 'combined' && question.type != 'splitset' && !CoreQuestionDelegate.isQuestionSupported(question.type)) {
                 // The question isn't supported.
                 messages.push(Translate.instant('core.question.questionmessage', {
                     $a: question.slot,
@@ -969,7 +969,7 @@ export class AddonModQuizProvider {
         const notSupported: string[] = [];
 
         questionTypes.forEach((type) => {
-            if (type != 'random' &&  type != 'combined' && !CoreQuestionDelegate.isQuestionSupported(type)) {
+            if (type != 'random' &&  type != 'combined'  && type != 'splitset' && !CoreQuestionDelegate.isQuestionSupported(type)) {
                notSupported.push(type);
             }
         });

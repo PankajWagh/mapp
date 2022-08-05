@@ -361,7 +361,7 @@ export class CoreQuestionDelegateService extends CoreDelegate<CoreQuestionHandle
      */
     isQuestionSupported(type: string): boolean {
 
-		if(type != 'combined')
+		if(type != 'combined' && type != 'splitset')
 		{
 				return this.hasHandler(this.getFullTypeName(type), true);
 		}
@@ -392,7 +392,7 @@ export class CoreQuestionDelegateService extends CoreDelegate<CoreQuestionHandle
         siteId?: string,
     ): Promise<void> {
         const type = this.getTypeName(question);
-
+		console.log("question-delegation***********"+type);
         await this.executeFunctionOnEnabled(
             type,
             'prepareAnswers',
