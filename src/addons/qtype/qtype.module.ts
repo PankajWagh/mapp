@@ -31,6 +31,7 @@ import { AddonQtypeRandomSaMatchModule } from './randomsamatch/randomsamatch.mod
 import { AddonQtypeShortAnswerModule } from './shortanswer/shortanswer.module';
 import { AddonQtypeTrueFalseModule } from './truefalse/truefalse.module';
 import { AddonQtypeCombinedModule } from './combined/combined.module';
+import { AddonQtypeSplitsetModule } from './splitset/splitset.module';
 
 @NgModule({
     imports: [
@@ -50,7 +51,8 @@ import { AddonQtypeCombinedModule } from './combined/combined.module';
         AddonQtypeRandomSaMatchModule,
         AddonQtypeShortAnswerModule,
         AddonQtypeTrueFalseModule,
-		AddonQtypeCombinedModule
+		AddonQtypeCombinedModule,
+		AddonQtypeSplitsetModule
     ],
 })
 export class AddonQtypeModule { }
